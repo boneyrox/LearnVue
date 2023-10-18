@@ -1,4 +1,4 @@
-Vue.js is a JavaScript framework for building user interfaces that provides a declarative and component-based programming model. Here are the main features and capabilities of Vue.js:
+Vue.js is a JavaScript framework for building user interfaces that provides a declarative and component-based programming model. Here are the main features and capabilities of Vue.js:  
 
 - **Flexibility and Incremental Adoptability**: Vue.js is designed to be flexible and incrementally adoptable, meaning it can be used in different ways depending on the project's needs. It can be used to enhance static HTML, embedded as Web Components, or as a Single-Page Application (SPA).
 
