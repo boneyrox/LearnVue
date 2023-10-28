@@ -1,0 +1,116 @@
+
+# Vue 2.6 Cheatsheet
+
+## 1. Basics
+- **Creating a Vue instance**: 
+  ```javascript
+  new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  });
+  ```
+
+- **Template syntax**:
+  ```html
+  <div id="app">
+    {{ message }}
+  </div>
+  ```
+
+## 2. Directives
+- `v-bind`: Bind an attribute to an expression.
+  ```html
+  <a v-bind:href="url">Link</a>
+  ```
+
+- `v-model`: Two-way data binding on an `input`, `textarea`, or `select`.
+  ```html
+  <input v-model="message">
+  ```
+
+- `v-for`: Render a list by iterating over an array.
+  ```html
+  <ul>
+    <li v-for="item in items">{{ item.text }}</li>
+  </ul>
+  ```
+
+- `v-on`: Listen to DOM events and execute some JavaScript when they're triggered.
+  ```html
+  <button v-on:click="doSomething">Click me</button>
+  ```
+
+- `v-if`, `v-else-if`, `v-else`: Conditional rendering of elements.
+  ```html
+  <p v-if="seen">Now you see me</p>
+  ```
+
+- `v-pre`: Skip compilation for this element and all its children.
+- `v-cloak`: Keep the element and its children in an "undefined state" until Vue's compilation is done.
+- `v-once`: Render plain HTML elements only once.
+
+## 3. Components
+```javascript
+Vue.component('my-component', {
+  props: ['title'],
+  template: '<h2>{{ title }}</h2>'
+});
+```
+
+## 4. Computed and Watchers
+```javascript
+new Vue({
+  el: '#app',
+  data: {
+    a: 1
+  },
+  computed: {
+    b: function () {
+      return this.a + 1
+    }
+  },
+  watch: {
+    a: function (val) {
+      console.log('a changed:', val);
+    }
+  }
+});
+```
+
+## 5. Lifecycle Hooks
+- `created()`: Called after the instance is created.
+- `mounted()`: Called after the instance has been mounted.
+- `updated()`: Called after the instance has been updated.
+- `destroyed()`: Called after the instance has been destroyed.
+
+## 6. Vue Router
+```javascript
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+];
+const router = new VueRouter({
+  routes
+});
+const app = new Vue({
+  router
+}).$mount('#app');
+```
+
+## 7. Vuex (State Management)
+```javascript
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+});
+```
+
+
